@@ -5,10 +5,10 @@ import { useT } from "./LangProvider";
 import { Lang, Track } from "@/lib/i18n";
 import { Weather } from "./WeatherEffect";
 
-type Theme = "brown" | "dark" | "purple";
+type Theme = "brown" | "dark" | "purple" | "light";
 type PanelId = "music" | "style" | "lang" | "weather" | null;
 
-const themeList: Theme[] = ["brown", "dark", "purple"];
+const themeList: Theme[] = ["brown", "dark", "purple", "light"];
 const langList: Lang[] = ["uz", "en", "ru"];
 const weatherList: Weather[] = ["off", "rain", "autumn", "winter"];
 

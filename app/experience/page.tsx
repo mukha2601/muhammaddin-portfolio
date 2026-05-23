@@ -1,9 +1,12 @@
 "use client";
 
 import { useT } from "@/components/LangProvider";
+import { getPortfolio } from "@/lib/portfolio";
 
 export default function ExperiencePage() {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const portfolio = getPortfolio(lang);
+
   return (
     <main className="page page-enter">
       <div className="container page-content">
@@ -13,7 +16,7 @@ export default function ExperiencePage() {
         </div>
 
         <div className="experience-list">
-          {t.experience.list.map((exp) => (
+          {portfolio.experience.map((exp) => (
             <article key={exp.id} className="experience-card">
               <div className="experience-header">
                 <div>

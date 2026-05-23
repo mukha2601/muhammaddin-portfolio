@@ -8,6 +8,7 @@
   --yellow-dark: #c9a820;
   --cream: #fff8e7;
   --black: #1a0f0a;
+  --text-muted: rgba(255, 248, 231, 0.8);
   --pixel-size: 4px;
   --nav-height: 72px;
 }
@@ -32,6 +33,19 @@
   --brown-light: #7a4ea3;
   --yellow: #ffd93d;
   --yellow-dark: #c9a820;
+}
+
+[data-theme="light"] {
+  --bg-dark: #f5ead0;
+  --bg-brown: #ead8b0;
+  --bg-panel: #fff8e7;
+  --brown-mid: #6b4423;
+  --brown-light: #8b6914;
+  --yellow: #ffd93d;
+  --yellow-dark: #c9a820;
+  --cream: #3d2817;
+  --black: #1a0f0a;
+  --text-muted: rgba(61, 40, 23, 0.78);
 }
 
 /* Side controls (right-side floating buttons) */
@@ -156,6 +170,23 @@
 
 .side-swatch[data-theme-preview="purple"] {
   background: #2d1b3d;
+}
+
+.side-swatch[data-theme-preview="light"] {
+  background: #f5ead0;
+}
+
+/* Light theme hover overrides — ensure visible contrast on light backgrounds */
+[data-theme="light"] .contact-item:hover {
+  color: #fff8e7;
+}
+
+[data-theme="light"] .project-visit-link:hover {
+  background: #fff8e7;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: #fff8e7;
 }
 
 .mini-toggle {
@@ -821,7 +852,7 @@ a {
 
 .project-card-desc {
   font-size: 20px;
-  color: rgba(255, 248, 231, 0.85);
+  color: var(--text-muted);
   padding-top: 16px;
   border-top: var(--pixel-size) solid var(--brown-mid);
 }
@@ -878,7 +909,7 @@ a {
 
 .experience-desc {
   font-size: 20px;
-  color: rgba(255, 248, 231, 0.8);
+  color: var(--text-muted);
 }
 
 /* Contact page */

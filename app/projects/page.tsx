@@ -1,10 +1,12 @@
 "use client";
 
 import { useT } from "@/components/LangProvider";
-import { profileMeta } from "@/lib/i18n";
+import { getPortfolio } from "@/lib/portfolio";
 
 export default function ProjectsPage() {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const portfolio = getPortfolio(lang);
+
   return (
     <main className="page page-enter">
       <div className="container page-content">
@@ -14,11 +16,11 @@ export default function ProjectsPage() {
         </div>
 
         <div className="projects-list">
-          {t.projects.list.map((project, idx) => (
+          {portfolio.projects.map((project) => (
             <article key={project.id} className="project-card-h">
               <div className="project-card-top">
                 <div className="project-card-image" aria-label={project.title}>
-                  {profileMeta.projectColors[idx]?.map((color, i) => (
+                  {project.colors.map((color, i) => (
                     <div
                       key={i}
                       className="project-pixel"
@@ -30,7 +32,7 @@ export default function ProjectsPage() {
                 <div className="project-card-link-wrap">
                   <h2 className="project-card-title">{project.title}</h2>
                   <a
-                    href={profileMeta.projectUrls[idx]}
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-visit-link"

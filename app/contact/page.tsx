@@ -1,11 +1,12 @@
 "use client";
 
 import { useT } from "@/components/LangProvider";
-import { profileMeta } from "@/lib/i18n";
+import { getPortfolio } from "@/lib/portfolio";
 import { FormEvent, useState } from "react";
 
 export default function ContactPage() {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const portfolio = getPortfolio(lang);
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: FormEvent) {
@@ -23,7 +24,7 @@ export default function ContactPage() {
 
         <div className="contact-layout">
           <div className="contact-links">
-            {profileMeta.contactLinks.map((link) => (
+            {portfolio.contactLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
