@@ -21,7 +21,7 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Pixel Developer",
+  title: "Portfolio | Muhammaddin Xoliqov",
   description: "Pixel-style personal portfolio",
 };
 
