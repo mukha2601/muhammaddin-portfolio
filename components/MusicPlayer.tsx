@@ -29,6 +29,11 @@ export default function MusicPlayer() {
         const track =
           (savedId && list.find((t) => t.id === savedId)) || list[0];
         audio.src = track.src;
+        window.dispatchEvent(
+          new CustomEvent("music-track-info", {
+            detail: { title: track.title },
+          }),
+        );
         if (localStorage.getItem("music") !== "off") tryPlay();
       })
       .catch(() => {});

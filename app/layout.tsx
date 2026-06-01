@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, VT323 } from "next/font/google";
+import { VT323 } from "next/font/google";
 import "./globals.css";
-import BottomNav from "@/components/BottomNav";
-import FloatingPixels from "@/components/FloatingPixels";
 import MusicPlayer from "@/components/MusicPlayer";
-import SideControls from "@/components/SideControls";
+import KeyboardShortcuts from "@/components/KeyboardShortcuts";
+import TerminalChrome from "@/components/TerminalChrome";
 import WeatherEffect from "@/components/WeatherEffect";
 import { LangProvider } from "@/components/LangProvider";
-
-const pressStart = Press_Start_2P({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-press-start",
-});
 
 const vt323 = VT323({
   weight: "400",
@@ -22,7 +15,7 @@ const vt323 = VT323({
 
 export const metadata: Metadata = {
   title: "Portfolio | Muhammaddin Xoliqov",
-  description: "Pixel-style personal portfolio",
+  description: "Retro DOS-style personal portfolio",
 };
 
 export default function RootLayout({
@@ -33,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="uz"
-      className={`${pressStart.variable} ${vt323.variable}`}
+      className={vt323.variable}
       suppressHydrationWarning
     >
       <head>
@@ -42,7 +35,7 @@ export default function RootLayout({
             __html: `
               (function(){
                 try {
-                  var t = localStorage.getItem('theme') || 'brown';
+                  var t = localStorage.getItem('theme') || 'green';
                   document.documentElement.dataset.theme = t;
                   var l = localStorage.getItem('lang') || 'uz';
                   document.documentElement.lang = l;
@@ -55,13 +48,12 @@ export default function RootLayout({
       <body>
         <LangProvider>
           <div className="scanline" aria-hidden="true" />
-          <FloatingPixels />
+          <div className="crt-vignette" aria-hidden="true" />
           <WeatherEffect />
+          <KeyboardShortcuts />
           <div className="app-shell">
-            <div className="site-container">{children}</div>
+            <TerminalChrome>{children}</TerminalChrome>
           </div>
-          <BottomNav />
-          <SideControls />
           <MusicPlayer />
         </LangProvider>
       </body>

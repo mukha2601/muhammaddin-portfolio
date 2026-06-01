@@ -1,5 +1,6 @@
 "use client";
 
+import SpecRow from "@/components/SpecRow";
 import { useT } from "@/components/LangProvider";
 import { getPortfolio } from "@/lib/portfolio";
 
@@ -9,26 +10,18 @@ export default function ExperiencePage() {
 
   return (
     <main className="page page-enter">
-      <div className="container page-content">
-        <div className="page-header">
-          <p className="page-tag">{t.experience.tag}</p>
-          <h1 className="page-title">{t.experience.title}</h1>
-        </div>
-
-        <div className="experience-list">
-          {portfolio.experience.map((exp) => (
-            <article key={exp.id} className="experience-card">
-              <div className="experience-header">
-                <div>
-                  <h2 className="experience-company">{exp.company}</h2>
-                  <p className="experience-role">{exp.role}</p>
-                </div>
-                <span className="experience-period">{exp.period}</span>
-              </div>
-              <p className="experience-desc">{exp.description}</p>
-            </article>
-          ))}
-        </div>
+      <div className="term-list">
+        {portfolio.experience.map((exp, i) => (
+          <article key={exp.id} className="term-entry">
+            <div className="term-entry-header">
+              <span className="term-entry-id">[{i + 1}]</span>
+              <span className="term-entry-name">{exp.company}</span>
+            </div>
+            <SpecRow label={t.experience.period} value={exp.period} />
+            <SpecRow label="Role" value={exp.role} />
+            <p className="term-entry-desc">{exp.description}</p>
+          </article>
+        ))}
       </div>
     </main>
   );

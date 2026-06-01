@@ -1,7 +1,16 @@
 export type Lang = "uz" | "en" | "ru";
 
 export type Translation = {
-  nav: { me: string; projects: string; experience: string; contact: string };
+  nav: {
+    me: string;
+    stack: string;
+    projects: string;
+    experience: string;
+    contact: string;
+    settings: string;
+  };
+  settings: { enabled: string; noTracks: string };
+  status: { f1: string; f2: string; musicOn: string; musicOff: string };
   side: {
     music: string;
     style: string;
@@ -9,44 +18,47 @@ export type Translation = {
     weather: string;
     musicHint: string;
   };
-  themes: { brown: string; dark: string; purple: string; light: string };
+  themes: { green: string; amber: string; white: string; dim: string };
   weather: { off: string; rain: string; autumn: string; winter: string };
   me: {
-    tag: string;
     downloadCv: string;
-    skillsTitle: string;
-    frontendTitle: string;
-    mobileTitle: string;
+    labels: {
+      role: string;
+      cv: string;
+    };
+  };
+  stack: {
+    frontend: string;
+    mobile: string;
   };
   projects: {
-    tag: string;
-    title: string;
     visit: string;
+    url: string;
   };
   experience: {
-    tag: string;
-    title: string;
-  };
-  contact: {
-    tag: string;
-    title: string;
-    name: string;
-    namePlaceholder: string;
-    email: string;
-    message: string;
-    messagePlaceholder: string;
-    send: string;
-    sent: string;
+    period: string;
   };
 };
 
 export const translations: Record<Lang, Translation> = {
   uz: {
     nav: {
-      me: "ME",
-      projects: "LOYIHA",
-      experience: "EXP",
-      contact: "CONTACT",
+      me: "Men",
+      stack: "Stack",
+      projects: "Loyihalar",
+      experience: "Tajriba",
+      contact: "Aloqa",
+      settings: "Settings",
+    },
+    settings: {
+      enabled: "Yoqilgan",
+      noTracks: "— Hech narsa yo'q —",
+    },
+    status: {
+      f1: "F1 — Musiqa",
+      f2: "F2 — Ob-havo",
+      musicOn: "yoqilgan",
+      musicOff: "o'chirilgan",
     },
     side: {
       music: "MUSIQA",
@@ -56,10 +68,10 @@ export const translations: Record<Lang, Translation> = {
       musicHint: "♪ MUSIQA UCHUN BOSING",
     },
     themes: {
-      brown: "JIGARRANG",
-      dark: "QORA",
-      purple: "BINAFSHA",
-      light: "OQ",
+      green: "YASHIL",
+      amber: "AMBER",
+      white: "OQ",
+      dim: "XIRA",
     },
     weather: {
       off: "YO'Q",
@@ -68,39 +80,42 @@ export const translations: Record<Lang, Translation> = {
       winter: "QISH",
     },
     me: {
-      tag: "// ME",
-      downloadCv: "CV YUKLAB OLISH ↓",
-      skillsTitle: "KO'NIKMALAR",
-      frontendTitle: "FRONTEND",
-      mobileTitle: "MOBILE / FLUTTER",
+      downloadCv: "Download CV",
+      labels: {
+        role: "Processor Type",
+        cv: "Resume File",
+      },
+    },
+    stack: {
+      frontend: "Frontend Stack",
+      mobile: "Mobile Stack",
     },
     projects: {
-      tag: "// LOYIHALAR",
-      title: "PROJECTS",
-      visit: "SAYTGA O'TISH →",
+      visit: "Run Test",
+      url: "Target URL",
     },
     experience: {
-      tag: "// TAJRIBA",
-      title: "EXPERIENCE",
-    },
-    contact: {
-      tag: "// ALOQA",
-      title: "CONTACT",
-      name: "ISM",
-      namePlaceholder: "Ismingiz...",
-      email: "EMAIL",
-      message: "XABAR",
-      messagePlaceholder: "Xabaringizni yozing...",
-      send: "YUBORISH →",
-      sent: "YUBORILDI ✓",
+      period: "Date Range",
     },
   },
   en: {
     nav: {
-      me: "ME",
-      projects: "PROJECTS",
-      experience: "EXP",
-      contact: "CONTACT",
+      me: "Me",
+      stack: "Stack",
+      projects: "Projects",
+      experience: "Experience",
+      contact: "Contact",
+      settings: "Settings",
+    },
+    settings: {
+      enabled: "Enabled",
+      noTracks: "— No tracks —",
+    },
+    status: {
+      f1: "F1 — Music",
+      f2: "F2 — Weather",
+      musicOn: "on",
+      musicOff: "off",
     },
     side: {
       music: "MUSIC",
@@ -110,10 +125,10 @@ export const translations: Record<Lang, Translation> = {
       musicHint: "♪ CLICK TO PLAY MUSIC",
     },
     themes: {
-      brown: "BROWN",
-      dark: "DARK",
-      purple: "PURPLE",
-      light: "LIGHT",
+      green: "GREEN",
+      amber: "AMBER",
+      white: "WHITE",
+      dim: "DIM",
     },
     weather: {
       off: "NONE",
@@ -122,39 +137,42 @@ export const translations: Record<Lang, Translation> = {
       winter: "WINTER",
     },
     me: {
-      tag: "// ME",
-      downloadCv: "DOWNLOAD CV ↓",
-      skillsTitle: "SKILLS",
-      frontendTitle: "FRONTEND",
-      mobileTitle: "MOBILE / FLUTTER",
+      downloadCv: "Download CV",
+      labels: {
+        role: "Processor Type",
+        cv: "Resume File",
+      },
+    },
+    stack: {
+      frontend: "Frontend Stack",
+      mobile: "Mobile Stack",
     },
     projects: {
-      tag: "// PROJECTS",
-      title: "PROJECTS",
-      visit: "VISIT SITE →",
+      visit: "Run Test",
+      url: "Target URL",
     },
     experience: {
-      tag: "// EXPERIENCE",
-      title: "EXPERIENCE",
-    },
-    contact: {
-      tag: "// CONTACT",
-      title: "CONTACT",
-      name: "NAME",
-      namePlaceholder: "Your name...",
-      email: "EMAIL",
-      message: "MESSAGE",
-      messagePlaceholder: "Write your message...",
-      send: "SEND →",
-      sent: "SENT ✓",
+      period: "Date Range",
     },
   },
   ru: {
     nav: {
-      me: "Я",
-      projects: "ПРОЕКТЫ",
-      experience: "ОПЫТ",
-      contact: "КОНТАКТ",
+      me: "Обо мне",
+      stack: "Stack",
+      projects: "Проекты",
+      experience: "Опыт",
+      contact: "Контакт",
+      settings: "Settings",
+    },
+    settings: {
+      enabled: "Включено",
+      noTracks: "— Нет треков —",
+    },
+    status: {
+      f1: "F1 — Музыка",
+      f2: "F2 — Погода",
+      musicOn: "включено",
+      musicOff: "выключено",
     },
     side: {
       music: "МУЗЫКА",
@@ -164,10 +182,10 @@ export const translations: Record<Lang, Translation> = {
       musicHint: "♪ НАЖМИТЕ ДЛЯ МУЗЫКИ",
     },
     themes: {
-      brown: "КОРИЧНЕВЫЙ",
-      dark: "ТЁМНЫЙ",
-      purple: "ФИОЛЕТОВЫЙ",
-      light: "СВЕТЛЫЙ",
+      green: "ЗЕЛЁНЫЙ",
+      amber: "ЯНТАРНЫЙ",
+      white: "БЕЛЫЙ",
+      dim: "ТУСКЛЫЙ",
     },
     weather: {
       off: "НЕТ",
@@ -176,31 +194,22 @@ export const translations: Record<Lang, Translation> = {
       winter: "ЗИМА",
     },
     me: {
-      tag: "// Я",
-      downloadCv: "СКАЧАТЬ CV ↓",
-      skillsTitle: "НАВЫКИ",
-      frontendTitle: "FRONTEND",
-      mobileTitle: "MOBILE / FLUTTER",
+      downloadCv: "Download CV",
+      labels: {
+        role: "Processor Type",
+        cv: "Resume File",
+      },
+    },
+    stack: {
+      frontend: "Frontend Stack",
+      mobile: "Mobile Stack",
     },
     projects: {
-      tag: "// ПРОЕКТЫ",
-      title: "PROJECTS",
-      visit: "ПЕРЕЙТИ →",
+      visit: "Run Test",
+      url: "Target URL",
     },
     experience: {
-      tag: "// ОПЫТ",
-      title: "EXPERIENCE",
-    },
-    contact: {
-      tag: "// КОНТАКТ",
-      title: "CONTACT",
-      name: "ИМЯ",
-      namePlaceholder: "Ваше имя...",
-      email: "EMAIL",
-      message: "СООБЩЕНИЕ",
-      messagePlaceholder: "Напишите сообщение...",
-      send: "ОТПРАВИТЬ →",
-      sent: "ОТПРАВЛЕНО ✓",
+      period: "Date Range",
     },
   },
 };
