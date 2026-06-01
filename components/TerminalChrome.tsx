@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TerminalStatus from "./TerminalStatus";
 import { useT } from "./LangProvider";
+import { NAV_SHORTCUTS } from "@/lib/nav";
 
 export default function TerminalChrome({
   children,
@@ -27,13 +28,15 @@ export default function TerminalChrome({
         <nav className="term-menu" aria-label="Navigation">
           {links.map((link) => {
             const active = pathname === link.href;
+            const shortcut =
+              NAV_SHORTCUTS.find((item) => item.href === link.href)?.key ?? "";
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`term-menu-item ${active ? "active" : ""}`}
               >
-                {link.label}
+                {link.label}[{shortcut}]
               </Link>
             );
           })}

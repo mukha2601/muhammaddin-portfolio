@@ -82,10 +82,10 @@ export default function TerminalStatus() {
       <div className="term-rule term-rule-double" role="separator" />
       <div className="term-status" aria-live="polite">
         <span className="term-status-item">
-          {t.status.f1}: {musicStatus}
+          {t.status.musicKey}: {musicStatus}
         </span>
         <span className="term-status-item">
-          {t.status.f2}: {t.weather[weather]}
+          {t.status.weatherKey}: {t.weather[weather]}
         </span>
       </div>
     </>

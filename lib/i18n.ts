@@ -9,7 +9,7 @@ export type Translation = {
     settings: string;
   };
   settings: { track: string; noTracks: string };
-  status: { f1: string; f2: string; musicOn: string; musicOff: string };
+  status: { musicKey: string; weatherKey: string; musicOn: string; musicOff: string };
   side: {
     music: string;
     style: string;
@@ -51,8 +51,8 @@ export const translations: Record<Lang, Translation> = {
       noTracks: "— Hech narsa yo'q —",
     },
     status: {
-      f1: "F1 — Musiqa",
-      f2: "F2 — Ob-havo",
+      musicKey: "[M] — Musiqa",
+      weatherKey: "[W] — Ob-havo",
       musicOn: "yoqilgan",
       musicOff: "o'chirilgan",
     },
@@ -86,10 +86,10 @@ export const translations: Record<Lang, Translation> = {
       },
     },
     projects: {
-      url: "Target URL",
+      url: "URL",
     },
     experience: {
-      period: "Date Range",
+      period: "Date",
     },
   },
   en: {
@@ -105,8 +105,8 @@ export const translations: Record<Lang, Translation> = {
       noTracks: "— No tracks —",
     },
     status: {
-      f1: "F1 — Music",
-      f2: "F2 — Weather",
+      musicKey: "[M] — Music",
+      weatherKey: "[W] — Weather",
       musicOn: "on",
       musicOff: "off",
     },
@@ -140,10 +140,10 @@ export const translations: Record<Lang, Translation> = {
       },
     },
     projects: {
-      url: "Target URL",
+      url: "URL",
     },
     experience: {
-      period: "Date Range",
+      period: "Date",
     },
   },
   ru: {
@@ -159,8 +159,8 @@ export const translations: Record<Lang, Translation> = {
       noTracks: "— Нет треков —",
     },
     status: {
-      f1: "F1 — Музыка",
-      f2: "F2 — Погода",
+      musicKey: "[M] — Музыка",
+      weatherKey: "[W] — Погода",
       musicOn: "включено",
       musicOff: "выключено",
     },
@@ -194,10 +194,10 @@ export const translations: Record<Lang, Translation> = {
       },
     },
     projects: {
-      url: "Target URL",
+      url: "URL",
     },
     experience: {
-      period: "Date Range",
+      period: "Date",
     },
   },
 };
