@@ -21,6 +21,11 @@ export type Experience = {
   description: string;
 };
 
+export type SkillGroup = {
+  name: string;
+  items: string[];
+};
+
 export type Profile = {
   name: string;
   cvUrl: string;
@@ -30,7 +35,7 @@ export type Profile = {
 
 export type Portfolio = {
   profile: Profile;
-  skills: { frontend: string[]; mobile: string[] };
+  skills: SkillGroup[];
   projects: Project[];
   experience: Experience[];
   contactLinks: ContactLink[];
@@ -39,3 +44,5 @@ export type Portfolio = {
 export type Track = { id: string; title: string; src: string };
 
 export const portfolio = portfolioData as Portfolio;
+
+export const defaultPortfolio = portfolio;

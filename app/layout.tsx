@@ -5,7 +5,8 @@ import MusicPlayer from "@/components/MusicPlayer";
 import KeyboardShortcuts from "@/components/KeyboardShortcuts";
 import TerminalChrome from "@/components/TerminalChrome";
 import WeatherEffect from "@/components/WeatherEffect";
-import { portfolio } from "@/lib/portfolio";
+import { defaultPortfolio } from "@/lib/portfolio";
+import { PortfolioProvider } from "@/components/PortfolioProvider";
 
 const vt323 = VT323({
   weight: "400",
@@ -14,7 +15,7 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: `Portfolio | ${portfolio.profile.name}`,
+  title: `Portfolio | ${defaultPortfolio.profile.name}`,
   description: "Retro DOS-style personal portfolio",
 };
 
@@ -44,14 +45,16 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="scanline" aria-hidden="true" />
-        <div className="crt-vignette" aria-hidden="true" />
-        <WeatherEffect />
-        <KeyboardShortcuts />
-        <div className="app-shell">
-          <TerminalChrome>{children}</TerminalChrome>
-        </div>
-        <MusicPlayer />
+        <PortfolioProvider>
+          <div className="scanline" aria-hidden="true" />
+          <div className="crt-vignette" aria-hidden="true" />
+          <WeatherEffect />
+          <KeyboardShortcuts />
+          <div className="app-shell">
+            <TerminalChrome>{children}</TerminalChrome>
+          </div>
+          <MusicPlayer />
+        </PortfolioProvider>
       </body>
     </html>
   );

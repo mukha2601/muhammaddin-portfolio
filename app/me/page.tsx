@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import SpecRow from "@/components/SpecRow";
-import { portfolio } from "@/lib/portfolio";
+import { usePortfolio } from "@/components/PortfolioProvider";
 import { ui } from "@/lib/ui";
 
 export default function MePage() {
+  const { portfolio } = usePortfolio();
   const { profile, skills } = portfolio;
-  const frontend = skills.frontend.join(", ");
-  const mobile = skills.mobile.join(", ");
 
   return (
     <main className="page page-me page-enter">
@@ -26,10 +25,15 @@ export default function MePage() {
 
         <div className="me-info">
           <SpecRow label={ui.me.labels.name} value={profile.name} />
-          <div className="me-rule" role="separator" aria-hidden="true" />
-          <SpecRow label={ui.me.labels.frontend} value={frontend} />
-          <div className="me-rule" role="separator" aria-hidden="true" />
-          <SpecRow label={ui.me.labels.mobile} value={mobile} />
+          {skills.map((group, index) => (
+            <div key={`${group.name}-${index}`}>
+              <div className="me-rule" role="separator" aria-hidden="true" />
+              <SpecRow
+                label={group.name}
+                value={group.items.join(", ")}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </main>

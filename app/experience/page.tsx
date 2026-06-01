@@ -1,10 +1,11 @@
 "use client";
 
 import SpecRow from "@/components/SpecRow";
-import { portfolio } from "@/lib/portfolio";
+import { usePortfolio } from "@/components/PortfolioProvider";
 import { ui } from "@/lib/ui";
 
 export default function ExperiencePage() {
+  const { portfolio } = usePortfolio();
   const { experience } = portfolio;
 
   return (

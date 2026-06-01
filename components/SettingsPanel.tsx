@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import DottedLine from "./DottedLine";
+import PortfolioEditModal from "./PortfolioEditModal";
+import { usePortfolio } from "./PortfolioProvider";
 import { Track } from "@/lib/portfolio";
 import { ui } from "@/lib/ui";
 import { Weather } from "./WeatherEffect";
@@ -13,6 +15,8 @@ const themeList: Theme[] = ["green", "amber", "white", "dim"];
 const weatherList: Weather[] = ["off", "rain", "autumn", "winter"];
 
 export default function SettingsPanel() {
+  const { portfolio, savePortfolio, resetPortfolio } = usePortfolio();
+  const [editorOpen, setEditorOpen] = useState(false);
   const [music, setMusic] = useState(true);
   const [tracks, setTracks] = useState<Track[]>([]);
   const [trackId, setTrackId] = useState<string>("");
@@ -82,7 +86,8 @@ export default function SettingsPanel() {
   }
 
   return (
-    <div className="contact-list">
+    <>
+      <div className="contact-list">
       <DottedLine label={ui.side.music}>
         <span className="contact-inline">
           <button
@@ -138,6 +143,27 @@ export default function SettingsPanel() {
           ))}
         </span>
       </DottedLine>
-    </div>
+
+      <DottedLine label={ui.side.portfolio}>
+        <span className="contact-inline">
+          <button
+            type="button"
+            className="contact-action"
+            onClick={() => setEditorOpen(true)}
+          >
+            {ui.editor.open}
+          </button>
+        </span>
+      </DottedLine>
+      </div>
+
+      <PortfolioEditModal
+        open={editorOpen}
+        portfolio={portfolio}
+        onClose={() => setEditorOpen(false)}
+        onSave={savePortfolio}
+        onReset={resetPortfolio}
+      />
+    </>
   );
 }

@@ -1,9 +1,11 @@
 "use client";
 
 import ContactLine from "@/components/ContactLine";
-import { portfolio } from "@/lib/portfolio";
+import { usePortfolio } from "@/components/PortfolioProvider";
 
 export default function ContactPage() {
+  const { portfolio } = usePortfolio();
+
   return (
     <main className="page page-enter">
       <div className="contact-list">

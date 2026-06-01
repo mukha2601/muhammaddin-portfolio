@@ -5,26 +5,32 @@
     "cvUrl": "/cv.pdf",
     "photoUrl": "/me.png"
   },
-  "skills": {
-    "frontend": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind",
-      "Git"
-    ],
-    "mobile": [
-      "Dart",
-      "Flutter",
-      "Riverpod",
-      "Firebase",
-      "REST API",
-      "Hive"
-    ]
-  },
+  "skills": [
+    {
+      "name": "Frontend",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "Git"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "items": [
+        "Dart",
+        "Flutter",
+        "Riverpod",
+        "Firebase",
+        "REST API",
+        "Hive"
+      ]
+    }
+  ],
   "projects": [
     {
       "id": 1,
