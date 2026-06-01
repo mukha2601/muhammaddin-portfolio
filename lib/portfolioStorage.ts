@@ -1,4 +1,8 @@
-import type { Portfolio } from "./portfolio";
+import {
+  clonePortfolio,
+  getDefaultPortfolio,
+  type Portfolio,
+} from "./portfolio";
 
 export const PORTFOLIO_STORAGE_KEY = "portfolio-override";
 
@@ -99,10 +103,11 @@ export function parsePortfolioJson(
     };
   }
 
-  return { ok: true, data: parsed };
+  return { ok: true, data: clonePortfolio(parsed) };
 }
 
-export function loadStoredPortfolio(defaultData: Portfolio): Portfolio {
+export function loadStoredPortfolio(): Portfolio {
+  const defaultData = getDefaultPortfolio();
   if (typeof window === "undefined") return defaultData;
 
   const saved = localStorage.getItem(PORTFOLIO_STORAGE_KEY);
@@ -113,7 +118,10 @@ export function loadStoredPortfolio(defaultData: Portfolio): Portfolio {
 }
 
 export function savePortfolioToStorage(data: Portfolio) {
-  localStorage.setItem(PORTFOLIO_STORAGE_KEY, JSON.stringify(data, null, 2));
+  localStorage.setItem(
+    PORTFOLIO_STORAGE_KEY,
+    JSON.stringify(clonePortfolio(data), null, 2),
+  );
 }
 
 export function clearStoredPortfolio() {
@@ -121,7 +129,7 @@ export function clearStoredPortfolio() {
 }
 
 export function downloadPortfolioJson(data: Portfolio) {
-  const blob = new Blob([JSON.stringify(data, null, 2)], {
+  const blob = new Blob([JSON.stringify(clonePortfolio(data), null, 2)], {
     type: "application/json",
   });
   const url = URL.createObjectURL(blob);
@@ -133,5 +141,5 @@ export function downloadPortfolioJson(data: Portfolio) {
 }
 
 export function formatPortfolioJson(data: Portfolio) {
-  return JSON.stringify(data, null, 2);
+  return JSON.stringify(clonePortfolio(data), null, 2);
 }

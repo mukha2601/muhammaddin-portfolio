@@ -1,0 +1,99 @@
+{
+  "profile": {
+    "name": "MUHAMMADDIN XOLIQOV",
+    "role": "Frontend & Mobile Developer",
+    "cvUrl": "/cv.pdf",
+    "photoUrl": "/me.png"
+  },
+  "skills": [
+    {
+      "name": "Frontend",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "Git"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "items": [
+        "Dart",
+        "Flutter",
+        "Riverpod",
+        "Firebase",
+        "REST API",
+        "Hive"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce App",
+      "description": "Online store application — a full-featured platform with products, cart and payment system.",
+      "url": "https://example.com"
+    },
+    {
+      "id": 2,
+      "title": "Task Manager",
+      "description": "Task management application — drag & drop and real-time updates.",
+      "url": "https://example.com"
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "Weather data panel — city-based forecast and interactive charts.",
+      "url": "https://example.com"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Tech Company",
+      "role": "Frontend Developer",
+      "period": "2023 — Present",
+      "description": "Building web apps with React and Next.js, developing UI component library and design system."
+    },
+    {
+      "id": 2,
+      "company": "Startup XYZ",
+      "role": "Junior Developer",
+      "period": "2021 — 2023",
+      "description": "Working on full-stack projects, REST API integration and database operations."
+    },
+    {
+      "id": 3,
+      "company": "Freelance",
+      "role": "Web Developer",
+      "period": "2020 — 2021",
+      "description": "Creating landing pages and portfolio sites for clients, implementing pixel-perfect design."
+    }
+  ],
+  "contactLinks": [
+    {
+      "label": "Email",
+      "value": "mukha0126@gmail.com",
+      "href": "mailto:mukha0126@gmail.com"
+    },
+    {
+      "label": "Phone",
+      "value": "+998 90 654 96 59",
+      "href": "tel:+998906549659"
+    },
+    {
+      "label": "Telegram",
+      "value": "@mukhammad_din",
+      "href": "https://t.me/mukhammad_din"
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/mukha2601",
+      "href": "https://github.com/mukha2601"
+    }
+  ]
+}

@@ -43,6 +43,12 @@ export type Portfolio = {
 
 export type Track = { id: string; title: string; src: string };
 
-export const portfolio = portfolioData as Portfolio;
+export function clonePortfolio(data: Portfolio): Portfolio {
+  return JSON.parse(JSON.stringify(data));
+}
 
-export const defaultPortfolio = portfolio;
+export function getDefaultPortfolio(): Portfolio {
+  return clonePortfolio(portfolioData as Portfolio);
+}
+
+export const defaultPortfolio = getDefaultPortfolio();

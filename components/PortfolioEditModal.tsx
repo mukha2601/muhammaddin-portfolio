@@ -9,6 +9,7 @@ import type {
   Project,
   SkillGroup,
 } from "@/lib/portfolio";
+import { getDefaultPortfolio } from "@/lib/portfolio";
 import { downloadPortfolioJson } from "@/lib/portfolioStorage";
 import { ui } from "@/lib/ui";
 
@@ -28,7 +29,7 @@ type FormState = {
   contactLinks: ContactLink[];
 };
 
-function clonePortfolio(data: Portfolio): FormState {
+function toFormState(data: Portfolio): FormState {
   return {
     profile: { ...data.profile },
     skills: data.skills.map((group) => ({
@@ -167,12 +168,12 @@ export default function PortfolioEditModal({
   onSave,
   onReset,
 }: PortfolioEditModalProps) {
-  const [form, setForm] = useState<FormState>(() => clonePortfolio(portfolio));
+  const [form, setForm] = useState<FormState>(() => toFormState(portfolio));
   const [error, setError] = useState("");
 
   useEffect(() => {
     if (open) {
-      setForm(clonePortfolio(portfolio));
+      setForm(toFormState(portfolio));
       setError("");
     }
   }, [open, portfolio]);
@@ -297,7 +298,7 @@ export default function PortfolioEditModal({
       profile: {
         name: profile.name.trim(),
         role: profile.role.trim(),
-        cvUrl: portfolio.profile.cvUrl,
+        cvUrl: getDefaultPortfolio().profile.cvUrl,
         photoUrl: profile.photoUrl.trim(),
       },
       skills: form.skills
@@ -343,6 +344,8 @@ export default function PortfolioEditModal({
 
   function handleReset() {
     onReset();
+    setForm(toFormState(getDefaultPortfolio()));
+    setError("");
     onClose();
   }
 

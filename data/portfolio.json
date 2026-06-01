@@ -1,7 +1,7 @@
 {
   "profile": {
-    "name": "MUHAMMADDIN XOLIQOV",
-    "role": "Frontend & Mobile Developer",
+    "name": "JOHN DOE",
+    "role": "Full Stack Developer",
     "cvUrl": "/cv.pdf",
     "photoUrl": "/me.png"
   },
@@ -14,20 +14,24 @@
         "JavaScript",
         "TypeScript",
         "React",
-        "Next.js",
-        "Tailwind",
-        "Git"
+        "Next.js"
       ]
     },
     {
-      "name": "Mobile",
+      "name": "Backend",
       "items": [
-        "Dart",
-        "Flutter",
-        "Riverpod",
-        "Firebase",
-        "REST API",
-        "Hive"
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "REST API"
+      ]
+    },
+    {
+      "name": "Tools",
+      "items": [
+        "Git",
+        "Docker",
+        "Figma"
       ]
     }
   ],
@@ -35,19 +39,19 @@
     {
       "id": 1,
       "title": "E-Commerce App",
-      "description": "Online store application — a full-featured platform with products, cart and payment system.",
+      "description": "Online store with product catalog, shopping cart, and checkout flow.",
       "url": "https://example.com"
     },
     {
       "id": 2,
       "title": "Task Manager",
-      "description": "Task management application — drag & drop and real-time updates.",
+      "description": "Productivity app with drag-and-drop boards and real-time updates.",
       "url": "https://example.com"
     },
     {
       "id": 3,
       "title": "Weather Dashboard",
-      "description": "Weather data panel — city-based forecast and interactive charts.",
+      "description": "City-based weather forecasts with charts and weekly outlook.",
       "url": "https://example.com"
     }
   ],
@@ -57,43 +61,43 @@
       "company": "Tech Company",
       "role": "Frontend Developer",
       "period": "2023 — Present",
-      "description": "Building web apps with React and Next.js, developing UI component library and design system."
+      "description": "Building web applications with React and Next.js, maintaining a shared UI component library."
     },
     {
       "id": 2,
       "company": "Startup XYZ",
       "role": "Junior Developer",
       "period": "2021 — 2023",
-      "description": "Working on full-stack projects, REST API integration and database operations."
+      "description": "Worked on full-stack features, API integrations, and database queries."
     },
     {
       "id": 3,
       "company": "Freelance",
       "role": "Web Developer",
       "period": "2020 — 2021",
-      "description": "Creating landing pages and portfolio sites for clients, implementing pixel-perfect design."
+      "description": "Delivered landing pages and portfolio websites for small business clients."
     }
   ],
   "contactLinks": [
     {
       "label": "Email",
-      "value": "mukha0126@gmail.com",
-      "href": "mailto:mukha0126@gmail.com"
+      "value": "hello@example.com",
+      "href": "mailto:hello@example.com"
     },
     {
       "label": "Phone",
-      "value": "+998 90 654 96 59",
-      "href": "tel:+998906549659"
+      "value": "+1 234 567 8900",
+      "href": "tel:+12345678900"
     },
     {
       "label": "Telegram",
-      "value": "@mukhammad_din",
-      "href": "https://t.me/mukhammad_din"
+      "value": "@yourusername",
+      "href": "https://t.me/yourusername"
     },
     {
       "label": "GitHub",
-      "value": "github.com/mukha2601",
-      "href": "https://github.com/mukha2601"
+      "value": "github.com/yourusername",
+      "href": "https://github.com/yourusername"
     }
   ]
 }

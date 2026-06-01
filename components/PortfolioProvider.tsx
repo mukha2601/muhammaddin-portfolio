@@ -7,7 +7,11 @@ import {
   useEffect,
   useState,
 } from "react";
-import { defaultPortfolio, type Portfolio } from "@/lib/portfolio";
+import {
+  clonePortfolio,
+  getDefaultPortfolio,
+  type Portfolio,
+} from "@/lib/portfolio";
 import {
   clearStoredPortfolio,
   loadStoredPortfolio,
@@ -27,24 +31,28 @@ function syncDocumentTitle(data: Portfolio) {
 }
 
 export function PortfolioProvider({ children }: { children: React.ReactNode }) {
-  const [portfolio, setPortfolio] = useState<Portfolio>(defaultPortfolio);
+  const [portfolio, setPortfolio] = useState<Portfolio>(() =>
+    getDefaultPortfolio(),
+  );
 
   useEffect(() => {
-    const stored = loadStoredPortfolio(defaultPortfolio);
+    const stored = loadStoredPortfolio();
     setPortfolio(stored);
     syncDocumentTitle(stored);
   }, []);
 
   const savePortfolio = useCallback((data: Portfolio) => {
-    savePortfolioToStorage(data);
-    setPortfolio(data);
-    syncDocumentTitle(data);
+    const copy = clonePortfolio(data);
+    savePortfolioToStorage(copy);
+    setPortfolio(copy);
+    syncDocumentTitle(copy);
   }, []);
 
   const resetPortfolio = useCallback(() => {
     clearStoredPortfolio();
-    setPortfolio(defaultPortfolio);
-    syncDocumentTitle(defaultPortfolio);
+    const fresh = getDefaultPortfolio();
+    setPortfolio(fresh);
+    syncDocumentTitle(fresh);
   }, []);
 
   return (
