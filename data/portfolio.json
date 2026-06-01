@@ -7,22 +7,22 @@
   },
   "skills": {
     "frontend": [
-      { "name": "HTML", "icon": "◼" },
-      { "name": "CSS", "icon": "◻" },
-      { "name": "JavaScript", "icon": "JS" },
-      { "name": "TypeScript", "icon": "TS" },
-      { "name": "React", "icon": "⚛" },
-      { "name": "Next.js", "icon": "▲" },
-      { "name": "Tailwind", "icon": "≋" },
-      { "name": "Git", "icon": "⎇" }
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Git"
     ],
     "mobile": [
-      { "name": "Dart", "icon": "◆" },
-      { "name": "Flutter", "icon": "▼" },
-      { "name": "Riverpod", "icon": "⚡" },
-      { "name": "Firebase", "icon": "🔥" },
-      { "name": "REST API", "icon": "⇄" },
-      { "name": "Hive", "icon": "⬢" }
+      "Dart",
+      "Flutter",
+      "Riverpod",
+      "Firebase",
+      "REST API",
+      "Hive"
     ]
   },
   "projects": [

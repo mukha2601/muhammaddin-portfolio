@@ -112,12 +112,6 @@
   text-shadow: none;
 }
 
-.side-btn-icon {
-  font-size: 14px;
-  width: 14px;
-  text-align: center;
-}
-
 .side-btn-label {
   font-size: 18px;
 }
@@ -265,13 +259,6 @@
   color: var(--black);
 }
 
-.track-icon {
-  width: 14px;
-  font-size: 12px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
 .track-title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -386,14 +373,6 @@
 
 .particle-autumn.hue-2 {
   background: #ffd93d;
-}
-
-.side-swatch.weather-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  background: var(--bg-dark);
 }
 
 *,

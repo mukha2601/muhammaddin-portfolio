@@ -7,8 +7,8 @@ import { ui } from "@/lib/ui";
 
 export default function MePage() {
   const { profile, skills } = portfolio;
-  const frontend = skills.frontend.map((s) => s.name).join(", ");
-  const mobile = skills.mobile.map((s) => s.name).join(", ");
+  const frontend = skills.frontend.join(", ");
+  const mobile = skills.mobile.join(", ");
 
   return (
     <main className="page page-me page-enter">

@@ -1,7 +1,5 @@
 import portfolioData from "@/data/portfolio.json";
 
-export type Skill = { name: string; icon: string };
-
 export type ContactLink = {
   label: string;
   value: string;
@@ -32,7 +30,7 @@ export type Profile = {
 
 export type Portfolio = {
   profile: Profile;
-  skills: { frontend: Skill[]; mobile: Skill[] };
+  skills: { frontend: string[]; mobile: string[] };
   projects: Project[];
   experience: Experience[];
   contactLinks: ContactLink[];
