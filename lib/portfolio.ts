@@ -1,4 +1,4 @@
-import portfolioData from "@/data/portfolio.json";
+import defaultPortfolioJson from "@/data/portfolio.default.json";
 
 export type ContactLink = {
   label: string;
@@ -47,8 +47,7 @@ export function clonePortfolio(data: Portfolio): Portfolio {
   return JSON.parse(JSON.stringify(data));
 }
 
+/** Template data from portfolio.default.json (used for Reset). */
 export function getDefaultPortfolio(): Portfolio {
-  return clonePortfolio(portfolioData as Portfolio);
+  return clonePortfolio(defaultPortfolioJson as Portfolio);
 }
-
-export const defaultPortfolio = getDefaultPortfolio();

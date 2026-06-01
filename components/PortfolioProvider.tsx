@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import {
@@ -30,13 +31,20 @@ function syncDocumentTitle(data: Portfolio) {
   document.title = `Portfolio | ${data.profile.name}`;
 }
 
-export function PortfolioProvider({ children }: { children: React.ReactNode }) {
+export function PortfolioProvider({
+  children,
+  initialPortfolio,
+}: {
+  children: React.ReactNode;
+  initialPortfolio: Portfolio;
+}) {
+  const baseRef = useRef(initialPortfolio);
   const [portfolio, setPortfolio] = useState<Portfolio>(() =>
-    getDefaultPortfolio(),
+    clonePortfolio(initialPortfolio),
   );
 
   useEffect(() => {
-    const stored = loadStoredPortfolio();
+    const stored = loadStoredPortfolio(baseRef.current);
     setPortfolio(stored);
     syncDocumentTitle(stored);
   }, []);

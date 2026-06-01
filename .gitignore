@@ -38,6 +38,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# IDE
-.vscode/
-.idea/
+# user portfolio (optional — copy from portfolio.default.json)
+/data/portfolio.json
+

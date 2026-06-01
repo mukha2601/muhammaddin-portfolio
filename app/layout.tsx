@@ -5,8 +5,8 @@ import MusicPlayer from "@/components/MusicPlayer";
 import KeyboardShortcuts from "@/components/KeyboardShortcuts";
 import TerminalChrome from "@/components/TerminalChrome";
 import WeatherEffect from "@/components/WeatherEffect";
-import { defaultPortfolio } from "@/lib/portfolio";
 import { PortfolioProvider } from "@/components/PortfolioProvider";
+import { getPortfolioData } from "@/lib/portfolio.server";
 
 const vt323 = VT323({
   weight: "400",
@@ -14,16 +14,21 @@ const vt323 = VT323({
   variable: "--font-vt323",
 });
 
-export const metadata: Metadata = {
-  title: `Portfolio | ${defaultPortfolio.profile.name}`,
-  description: "Retro DOS-style personal portfolio",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const portfolio = await getPortfolioData();
+  return {
+    title: `Portfolio | ${portfolio.profile.name}`,
+    description: "Retro DOS-style personal portfolio",
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialPortfolio = await getPortfolioData();
+
   return (
     <html
       lang="en"
@@ -45,7 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <PortfolioProvider>
+        <PortfolioProvider initialPortfolio={initialPortfolio}>
           <div className="scanline" aria-hidden="true" />
           <div className="crt-vignette" aria-hidden="true" />
           <WeatherEffect />

@@ -1,6 +1,5 @@
 import {
   clonePortfolio,
-  getDefaultPortfolio,
   type Portfolio,
 } from "./portfolio";
 
@@ -106,15 +105,15 @@ export function parsePortfolioJson(
   return { ok: true, data: clonePortfolio(parsed) };
 }
 
-export function loadStoredPortfolio(): Portfolio {
-  const defaultData = getDefaultPortfolio();
-  if (typeof window === "undefined") return defaultData;
+export function loadStoredPortfolio(base: Portfolio): Portfolio {
+  const fallback = clonePortfolio(base);
+  if (typeof window === "undefined") return fallback;
 
   const saved = localStorage.getItem(PORTFOLIO_STORAGE_KEY);
-  if (!saved) return defaultData;
+  if (!saved) return fallback;
 
   const result = parsePortfolioJson(saved);
-  return result.ok ? result.data : defaultData;
+  return result.ok ? result.data : fallback;
 }
 
 export function savePortfolioToStorage(data: Portfolio) {
