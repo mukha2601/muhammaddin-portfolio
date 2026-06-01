@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useT } from "./LangProvider";
-import { Track } from "@/lib/i18n";
+import { Track } from "@/lib/portfolio";
+import { ui } from "@/lib/ui";
 import { Weather } from "./WeatherEffect";
 import { getMusicEnabled, getWeather } from "@/lib/preferences";
 
@@ -19,7 +19,6 @@ function resolveTrackTitle(tracks: Track[], src?: string, id?: string | null) {
 }
 
 export default function TerminalStatus() {
-  const { t } = useT();
   const [musicOn, setMusicOn] = useState(false);
   const [trackTitle, setTrackTitle] = useState("");
   const [weather, setWeatherState] = useState<Weather>("off");
@@ -74,18 +73,18 @@ export default function TerminalStatus() {
   const musicStatus = musicOn
     ? trackTitle
       ? `♪ ${trackTitle}`
-      : t.status.musicOn
-    : t.status.musicOff;
+      : ui.status.musicOn
+    : ui.status.musicOff;
 
   return (
     <>
       <div className="term-rule term-rule-double" role="separator" />
       <div className="term-status" aria-live="polite">
         <span className="term-status-item">
-          {t.status.musicKey}: {musicStatus}
+          {ui.status.musicKey}: {musicStatus}
         </span>
         <span className="term-status-item">
-          {t.status.weatherKey}: {t.weather[weather]}
+          {ui.status.weatherKey}: {ui.weather[weather]}
         </span>
       </div>
     </>

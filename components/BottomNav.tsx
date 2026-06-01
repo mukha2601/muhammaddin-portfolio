@@ -2,18 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { useT } from "./LangProvider";
+import { ui } from "@/lib/ui";
 
 export default function BottomNav() {
   const pathname = usePathname();
-  const { t } = useT();
 
   const links = [
-    { href: "/me", label: t.nav.me },
-    { href: "/projects", label: t.nav.projects },
-    { href: "/experience", label: t.nav.experience },
-    { href: "/contact", label: t.nav.contact },
+    { href: "/me", label: ui.nav.me },
+    { href: "/projects", label: ui.nav.projects },
+    { href: "/experience", label: ui.nav.experience },
+    { href: "/contact", label: ui.nav.contact },
   ];
 
   return (

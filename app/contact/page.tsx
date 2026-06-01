@@ -1,13 +1,9 @@
 "use client";
 
 import ContactLine from "@/components/ContactLine";
-import { getPortfolio } from "@/lib/portfolio";
-import { useT } from "@/components/LangProvider";
+import { portfolio } from "@/lib/portfolio";
 
 export default function ContactPage() {
-  const { lang } = useT();
-  const portfolio = getPortfolio(lang);
-
   return (
     <main className="page page-enter">
       <div className="contact-list">

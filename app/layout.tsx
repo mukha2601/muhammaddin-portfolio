@@ -5,7 +5,7 @@ import MusicPlayer from "@/components/MusicPlayer";
 import KeyboardShortcuts from "@/components/KeyboardShortcuts";
 import TerminalChrome from "@/components/TerminalChrome";
 import WeatherEffect from "@/components/WeatherEffect";
-import { LangProvider } from "@/components/LangProvider";
+import { portfolio } from "@/lib/portfolio";
 
 const vt323 = VT323({
   weight: "400",
@@ -14,7 +14,7 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Muhammaddin Xoliqov",
+  title: `Portfolio | ${portfolio.profile.name}`,
   description: "Retro DOS-style personal portfolio",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="uz"
+      lang="en"
       className={vt323.variable}
       suppressHydrationWarning
     >
@@ -37,8 +37,6 @@ export default function RootLayout({
                 try {
                   var t = localStorage.getItem('theme') || 'green';
                   document.documentElement.dataset.theme = t;
-                  var l = localStorage.getItem('lang') || 'uz';
-                  document.documentElement.lang = l;
                 } catch(e){}
               })();
             `,
@@ -46,16 +44,14 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <LangProvider>
-          <div className="scanline" aria-hidden="true" />
-          <div className="crt-vignette" aria-hidden="true" />
-          <WeatherEffect />
-          <KeyboardShortcuts />
-          <div className="app-shell">
-            <TerminalChrome>{children}</TerminalChrome>
-          </div>
-          <MusicPlayer />
-        </LangProvider>
+        <div className="scanline" aria-hidden="true" />
+        <div className="crt-vignette" aria-hidden="true" />
+        <WeatherEffect />
+        <KeyboardShortcuts />
+        <div className="app-shell">
+          <TerminalChrome>{children}</TerminalChrome>
+        </div>
+        <MusicPlayer />
       </body>
     </html>
   );

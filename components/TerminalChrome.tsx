@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TerminalStatus from "./TerminalStatus";
-import { useT } from "./LangProvider";
+import { ui } from "@/lib/ui";
 import { NAV_SHORTCUTS } from "@/lib/nav";
 
 export default function TerminalChrome({
@@ -12,14 +12,13 @@ export default function TerminalChrome({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const { t } = useT();
 
   const links = [
-    { href: "/me", label: t.nav.me },
-    { href: "/projects", label: t.nav.projects },
-    { href: "/experience", label: t.nav.experience },
-    { href: "/contact", label: t.nav.contact },
-    { href: "/settings", label: t.nav.settings },
+    { href: "/me", label: ui.nav.me },
+    { href: "/projects", label: ui.nav.projects },
+    { href: "/experience", label: ui.nav.experience },
+    { href: "/contact", label: ui.nav.contact },
+    { href: "/settings", label: ui.nav.settings },
   ];
 
   return (

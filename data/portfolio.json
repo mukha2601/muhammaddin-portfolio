@@ -1,13 +1,9 @@
 {
   "profile": {
     "name": "MUHAMMADDIN XOLIQOV",
+    "role": "Frontend & Mobile Developer",
     "cvUrl": "/cv.pdf",
-    "photoUrl": "/me.png",
-    "translations": {
-      "uz": { "role": "Frontend & Mobile Developer" },
-      "en": { "role": "Frontend & Mobile Developer" },
-      "ru": { "role": "Frontend & Mobile Developer" }
-    }
+    "photoUrl": "/me.png"
   },
   "skills": {
     "frontend": [
@@ -32,172 +28,66 @@
   "projects": [
     {
       "id": 1,
-      "url": "https://example.com",
-      "colors": [
-        "#ffd93d", "#6b4423", "#3d2817", "#fff8e7", "#8b6914",
-        "#2a1810", "#ffd93d", "#6b4423", "#3d2817", "#fff8e7",
-        "#8b6914", "#2a1810", "#ffd93d", "#6b4423", "#3d2817",
-        "#fff8e7", "#8b6914", "#2a1810", "#ffd93d", "#6b4423"
-      ],
-      "translations": {
-        "uz": {
-          "title": "E-Commerce App",
-          "description": "Onlayn do'kon ilovasi — mahsulotlar, savat va to'lov tizimi bilan to'liq funksional platforma."
-        },
-        "en": {
-          "title": "E-Commerce App",
-          "description": "Online store application — a full-featured platform with products, cart and payment system."
-        },
-        "ru": {
-          "title": "E-Commerce App",
-          "description": "Приложение интернет-магазина — полнофункциональная платформа с товарами, корзиной и системой оплаты."
-        }
-      }
+      "title": "E-Commerce App",
+      "description": "Online store application — a full-featured platform with products, cart and payment system.",
+      "url": "https://example.com"
     },
     {
       "id": 2,
-      "url": "https://example.com",
-      "colors": [
-        "#6b4423", "#ffd93d", "#2a1810", "#8b6914", "#fff8e7",
-        "#3d2817", "#6b4423", "#ffd93d", "#2a1810", "#8b6914",
-        "#fff8e7", "#3d2817", "#6b4423", "#ffd93d", "#2a1810",
-        "#8b6914", "#fff8e7", "#3d2817", "#6b4423", "#ffd93d"
-      ],
-      "translations": {
-        "uz": {
-          "title": "Task Manager",
-          "description": "Vazifalarni boshqarish ilovasi — drag & drop va real-time yangilanish imkoniyatlari."
-        },
-        "en": {
-          "title": "Task Manager",
-          "description": "Task management application — drag & drop and real-time updates."
-        },
-        "ru": {
-          "title": "Task Manager",
-          "description": "Приложение для управления задачами — drag & drop и обновления в реальном времени."
-        }
-      }
+      "title": "Task Manager",
+      "description": "Task management application — drag & drop and real-time updates.",
+      "url": "https://example.com"
     },
     {
       "id": 3,
-      "url": "https://example.com",
-      "colors": [
-        "#3d2817", "#8b6914", "#ffd93d", "#6b4423", "#fff8e7",
-        "#2a1810", "#3d2817", "#ffd93d", "#6b4423", "#8b6914",
-        "#fff8e7", "#2a1810", "#3d2817", "#8b6914", "#ffd93d",
-        "#6b4423", "#fff8e7", "#2a1810", "#3d2817", "#ffd93d"
-      ],
-      "translations": {
-        "uz": {
-          "title": "Weather Dashboard",
-          "description": "Ob-havo ma'lumotlari paneli — shahar bo'yicha prognoz va interaktiv grafiklar."
-        },
-        "en": {
-          "title": "Weather Dashboard",
-          "description": "Weather data panel — city-based forecast and interactive charts."
-        },
-        "ru": {
-          "title": "Weather Dashboard",
-          "description": "Панель погодных данных — прогноз по городу и интерактивные графики."
-        }
-      }
+      "title": "Weather Dashboard",
+      "description": "Weather data panel — city-based forecast and interactive charts.",
+      "url": "https://example.com"
     }
   ],
   "experience": [
     {
       "id": 1,
-      "translations": {
-        "uz": {
-          "company": "Tech Company",
-          "role": "Frontend Developer",
-          "period": "2023 — Hozir",
-          "description": "React va Next.js bilan veb-ilovalar yaratish, UI komponentlar kutubxonasi va dizayn tizimini rivojlantirish."
-        },
-        "en": {
-          "company": "Tech Company",
-          "role": "Frontend Developer",
-          "period": "2023 — Present",
-          "description": "Building web apps with React and Next.js, developing UI component library and design system."
-        },
-        "ru": {
-          "company": "Tech Company",
-          "role": "Frontend Developer",
-          "period": "2023 — наст. время",
-          "description": "Разработка веб-приложений на React и Next.js, развитие библиотеки UI-компонентов и дизайн-системы."
-        }
-      }
+      "company": "Tech Company",
+      "role": "Frontend Developer",
+      "period": "2023 — Present",
+      "description": "Building web apps with React and Next.js, developing UI component library and design system."
     },
     {
       "id": 2,
-      "translations": {
-        "uz": {
-          "company": "Startup XYZ",
-          "role": "Junior Developer",
-          "period": "2021 — 2023",
-          "description": "Full-stack loyihalarda ishlash, REST API integratsiyasi va ma'lumotlar bazasi bilan ishlash."
-        },
-        "en": {
-          "company": "Startup XYZ",
-          "role": "Junior Developer",
-          "period": "2021 — 2023",
-          "description": "Working on full-stack projects, REST API integration and database operations."
-        },
-        "ru": {
-          "company": "Startup XYZ",
-          "role": "Junior Developer",
-          "period": "2021 — 2023",
-          "description": "Работа над full-stack проектами, интеграция REST API и работа с базой данных."
-        }
-      }
+      "company": "Startup XYZ",
+      "role": "Junior Developer",
+      "period": "2021 — 2023",
+      "description": "Working on full-stack projects, REST API integration and database operations."
     },
     {
       "id": 3,
-      "translations": {
-        "uz": {
-          "company": "Freelance",
-          "role": "Web Developer",
-          "period": "2020 — 2021",
-          "description": "Mijozlar uchun landing page va portfolio saytlar yaratish, pixel-perfect dizayn amalga oshirish."
-        },
-        "en": {
-          "company": "Freelance",
-          "role": "Web Developer",
-          "period": "2020 — 2021",
-          "description": "Creating landing pages and portfolio sites for clients, implementing pixel-perfect design."
-        },
-        "ru": {
-          "company": "Freelance",
-          "role": "Web Developer",
-          "period": "2020 — 2021",
-          "description": "Создание landing-страниц и портфолио-сайтов для клиентов, реализация pixel-perfect дизайна."
-        }
-      }
+      "company": "Freelance",
+      "role": "Web Developer",
+      "period": "2020 — 2021",
+      "description": "Creating landing pages and portfolio sites for clients, implementing pixel-perfect design."
     }
   ],
   "contactLinks": [
     {
       "label": "Email",
       "value": "mukha0126@gmail.com",
-      "href": "mailto:mukha0126@gmail.com",
-      "icon": "✉"
+      "href": "mailto:mukha0126@gmail.com"
     },
     {
       "label": "Phone",
       "value": "+998 90 654 96 59",
-      "href": "tel:+998906549659",
-      "icon": "☏"
+      "href": "tel:+998906549659"
     },
     {
       "label": "Telegram",
       "value": "@mukhammad_din",
-      "href": "https://t.me/mukhammad_din",
-      "icon": "✈"
+      "href": "https://t.me/mukhammad_din"
     },
     {
       "label": "GitHub",
       "value": "github.com/mukha2601",
-      "href": "https://github.com/mukha2601",
-      "icon": "⌘"
+      "href": "https://github.com/mukha2601"
     }
   ]
 }

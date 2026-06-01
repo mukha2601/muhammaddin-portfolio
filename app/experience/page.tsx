@@ -1,24 +1,22 @@
 "use client";
 
 import SpecRow from "@/components/SpecRow";
-import { useT } from "@/components/LangProvider";
-import { getPortfolio } from "@/lib/portfolio";
+import { portfolio } from "@/lib/portfolio";
+import { ui } from "@/lib/ui";
 
 export default function ExperiencePage() {
-  const { t, lang } = useT();
-  const portfolio = getPortfolio(lang);
+  const { experience } = portfolio;
 
   return (
     <main className="page page-enter">
       <div className="term-list">
-        {portfolio.experience.map((exp, i) => (
+        {experience.map((exp) => (
           <article key={exp.id} className="term-entry">
             <div className="term-entry-header">
-              <span className="term-entry-id">[{i + 1}]</span>
               <span className="term-entry-name">{exp.company}</span>
             </div>
-            <SpecRow label={t.experience.period} value={exp.period} />
-            <SpecRow label="Role" value={exp.role} />
+            <SpecRow label={ui.experience.period} value={exp.period} />
+            <SpecRow label={ui.experience.role} value={exp.role} />
             <p className="term-entry-desc">{exp.description}</p>
           </article>
         ))}

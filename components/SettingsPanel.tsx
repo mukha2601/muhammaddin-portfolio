@@ -2,19 +2,17 @@
 
 import { useEffect, useState } from "react";
 import DottedLine from "./DottedLine";
-import { useT } from "./LangProvider";
-import { Lang, Track } from "@/lib/i18n";
+import { Track } from "@/lib/portfolio";
+import { ui } from "@/lib/ui";
 import { Weather } from "./WeatherEffect";
 import { getMusicEnabled, getWeather, setMusicEnabled, setWeather } from "@/lib/preferences";
 
 type Theme = "green" | "amber" | "white" | "dim";
 
 const themeList: Theme[] = ["green", "amber", "white", "dim"];
-const langList: Lang[] = ["uz", "en", "ru"];
 const weatherList: Weather[] = ["off", "rain", "autumn", "winter"];
 
 export default function SettingsPanel() {
-  const { lang, setLang, t } = useT();
   const [music, setMusic] = useState(true);
   const [tracks, setTracks] = useState<Track[]>([]);
   const [trackId, setTrackId] = useState<string>("");
@@ -78,10 +76,6 @@ export default function SettingsPanel() {
     document.documentElement.dataset.theme = value;
   }
 
-  function applyLang(value: Lang) {
-    setLang(value);
-  }
-
   function applyWeather(value: Weather) {
     setWeatherState(value);
     setWeather(value);
@@ -89,17 +83,17 @@ export default function SettingsPanel() {
 
   return (
     <div className="contact-list">
-      <DottedLine label={t.side.music}>
+      <DottedLine label={ui.side.music}>
         <span className="contact-inline">
           <button
             type="button"
             className="contact-action"
             onClick={() => setMusicState(!music)}
           >
-            {music ? t.status.musicOn : t.status.musicOff}
+            {music ? ui.status.musicOn : ui.status.musicOff}
           </button>
           {tracks.length === 0 ? (
-            <span className="contact-static">{t.settings.noTracks}</span>
+            <span className="contact-static">{ui.settings.noTracks}</span>
           ) : (
             tracks.map((tr) => (
               <button
@@ -115,7 +109,7 @@ export default function SettingsPanel() {
         </span>
       </DottedLine>
 
-      <DottedLine label={t.side.style}>
+      <DottedLine label={ui.side.style}>
         <span className="contact-inline">
           {themeList.map((th) => (
             <button
@@ -124,28 +118,13 @@ export default function SettingsPanel() {
               className={`contact-action ${theme === th ? "active" : ""}`}
               onClick={() => applyTheme(th)}
             >
-              {t.themes[th]}
+              {ui.themes[th]}
             </button>
           ))}
         </span>
       </DottedLine>
 
-      <DottedLine label={t.side.lang}>
-        <span className="contact-inline">
-          {langList.map((l) => (
-            <button
-              key={l}
-              type="button"
-              className={`contact-action ${lang === l ? "active" : ""}`}
-              onClick={() => applyLang(l)}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
-        </span>
-      </DottedLine>
-
-      <DottedLine label={t.side.weather}>
+      <DottedLine label={ui.side.weather}>
         <span className="contact-inline">
           {weatherList.map((w) => (
             <button
@@ -154,7 +133,7 @@ export default function SettingsPanel() {
               className={`contact-action ${weather === w ? "active" : ""}`}
               onClick={() => applyWeather(w)}
             >
-              {t.weather[w]}
+              {ui.weather[w]}
             </button>
           ))}
         </span>
