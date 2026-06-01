@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import DottedLine from "./DottedLine";
 import { useT } from "./LangProvider";
 import { Lang, Track } from "@/lib/i18n";
 import { Weather } from "./WeatherEffect";
@@ -11,13 +12,6 @@ type Theme = "green" | "amber" | "white" | "dim";
 const themeList: Theme[] = ["green", "amber", "white", "dim"];
 const langList: Lang[] = ["uz", "en", "ru"];
 const weatherList: Weather[] = ["off", "rain", "autumn", "winter"];
-
-const weatherIcons: Record<Weather, string> = {
-  off: "○",
-  rain: "☔",
-  autumn: "🍂",
-  winter: "❄",
-};
 
 export default function SettingsPanel() {
   const { lang, setLang, t } = useT();
@@ -94,86 +88,77 @@ export default function SettingsPanel() {
   }
 
   return (
-    <div className="settings-panel">
-      <section className="settings-section">
-        <h2 className="settings-heading">{t.side.music}</h2>
-        <div className="settings-row">
-          <span className="settings-label">{t.settings.enabled}:</span>
+    <div className="contact-list">
+      <DottedLine label={t.side.music}>
+        <span className="contact-inline">
           <button
-            className={`mini-toggle ${music ? "on" : "off"}`}
+            type="button"
+            className="contact-action"
             onClick={() => setMusicState(!music)}
-            aria-label="Toggle music"
           >
-            <span className="mini-thumb" />
+            {music ? t.status.musicOn : t.status.musicOff}
           </button>
-        </div>
-        <div className="settings-track-list">
           {tracks.length === 0 ? (
-            <div className="track-empty">{t.settings.noTracks}</div>
+            <span className="contact-static">{t.settings.noTracks}</span>
           ) : (
             tracks.map((tr) => (
               <button
                 key={tr.id}
-                className={`settings-option ${trackId === tr.id ? "active" : ""}`}
+                type="button"
+                className={`contact-action ${trackId === tr.id ? "active" : ""}`}
                 onClick={() => selectTrack(tr)}
-                title={tr.title}
               >
-                <span className="track-icon">
-                  {trackId === tr.id && music ? "▶" : "♪"}
-                </span>
-                {tr.title}
+                {trackId === tr.id && music ? `▶ ${tr.title}` : tr.title}
               </button>
             ))
           )}
-        </div>
-      </section>
+        </span>
+      </DottedLine>
 
-      <section className="settings-section">
-        <h2 className="settings-heading">{t.side.style}</h2>
-        <div className="settings-options">
+      <DottedLine label={t.side.style}>
+        <span className="contact-inline">
           {themeList.map((th) => (
             <button
               key={th}
-              className={`settings-option ${theme === th ? "active" : ""}`}
+              type="button"
+              className={`contact-action ${theme === th ? "active" : ""}`}
               onClick={() => applyTheme(th)}
             >
-              <span className="side-swatch" data-theme-preview={th} />
               {t.themes[th]}
             </button>
           ))}
-        </div>
-      </section>
+        </span>
+      </DottedLine>
 
-      <section className="settings-section">
-        <h2 className="settings-heading">{t.side.lang}</h2>
-        <div className="settings-options">
+      <DottedLine label={t.side.lang}>
+        <span className="contact-inline">
           {langList.map((l) => (
             <button
               key={l}
-              className={`settings-option ${lang === l ? "active" : ""}`}
+              type="button"
+              className={`contact-action ${lang === l ? "active" : ""}`}
               onClick={() => applyLang(l)}
             >
               {l.toUpperCase()}
             </button>
           ))}
-        </div>
-      </section>
+        </span>
+      </DottedLine>
 
-      <section className="settings-section">
-        <h2 className="settings-heading">{t.side.weather}</h2>
-        <div className="settings-options">
+      <DottedLine label={t.side.weather}>
+        <span className="contact-inline">
           {weatherList.map((w) => (
             <button
               key={w}
-              className={`settings-option ${weather === w ? "active" : ""}`}
+              type="button"
+              className={`contact-action ${weather === w ? "active" : ""}`}
               onClick={() => applyWeather(w)}
             >
-              <span className="side-swatch weather-icon">{weatherIcons[w]}</span>
               {t.weather[w]}
             </button>
           ))}
-        </div>
-      </section>
+        </span>
+      </DottedLine>
     </div>
   );
 }

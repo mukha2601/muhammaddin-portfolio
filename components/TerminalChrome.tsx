@@ -15,7 +15,6 @@ export default function TerminalChrome({
 
   const links = [
     { href: "/me", label: t.nav.me },
-    { href: "/stack", label: t.nav.stack },
     { href: "/projects", label: t.nav.projects },
     { href: "/experience", label: t.nav.experience },
     { href: "/contact", label: t.nav.contact },

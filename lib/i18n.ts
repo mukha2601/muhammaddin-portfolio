@@ -3,13 +3,12 @@ export type Lang = "uz" | "en" | "ru";
 export type Translation = {
   nav: {
     me: string;
-    stack: string;
     projects: string;
     experience: string;
     contact: string;
     settings: string;
   };
-  settings: { enabled: string; noTracks: string };
+  settings: { track: string; noTracks: string };
   status: { f1: string; f2: string; musicOn: string; musicOff: string };
   side: {
     music: string;
@@ -23,16 +22,14 @@ export type Translation = {
   me: {
     downloadCv: string;
     labels: {
+      name: string;
       role: string;
       cv: string;
+      frontend: string;
+      mobile: string;
     };
   };
-  stack: {
-    frontend: string;
-    mobile: string;
-  };
   projects: {
-    visit: string;
     url: string;
   };
   experience: {
@@ -44,14 +41,13 @@ export const translations: Record<Lang, Translation> = {
   uz: {
     nav: {
       me: "Men",
-      stack: "Stack",
       projects: "Loyihalar",
       experience: "Tajriba",
       contact: "Aloqa",
       settings: "Settings",
     },
     settings: {
-      enabled: "Yoqilgan",
+      track: "track",
       noTracks: "— Hech narsa yo'q —",
     },
     status: {
@@ -82,16 +78,14 @@ export const translations: Record<Lang, Translation> = {
     me: {
       downloadCv: "Download CV",
       labels: {
-        role: "Processor Type",
-        cv: "Resume File",
+        name: "Ism",
+        role: "Lavozim",
+        cv: "CV",
+        frontend: "Frontend Stack",
+        mobile: "Mobile Stack",
       },
     },
-    stack: {
-      frontend: "Frontend Stack",
-      mobile: "Mobile Stack",
-    },
     projects: {
-      visit: "Run Test",
       url: "Target URL",
     },
     experience: {
@@ -101,14 +95,13 @@ export const translations: Record<Lang, Translation> = {
   en: {
     nav: {
       me: "Me",
-      stack: "Stack",
       projects: "Projects",
       experience: "Experience",
       contact: "Contact",
       settings: "Settings",
     },
     settings: {
-      enabled: "Enabled",
+      track: "track",
       noTracks: "— No tracks —",
     },
     status: {
@@ -139,16 +132,14 @@ export const translations: Record<Lang, Translation> = {
     me: {
       downloadCv: "Download CV",
       labels: {
-        role: "Processor Type",
-        cv: "Resume File",
+        name: "Name",
+        role: "Role",
+        cv: "CV",
+        frontend: "Frontend Stack",
+        mobile: "Mobile Stack",
       },
     },
-    stack: {
-      frontend: "Frontend Stack",
-      mobile: "Mobile Stack",
-    },
     projects: {
-      visit: "Run Test",
       url: "Target URL",
     },
     experience: {
@@ -158,14 +149,13 @@ export const translations: Record<Lang, Translation> = {
   ru: {
     nav: {
       me: "Обо мне",
-      stack: "Stack",
       projects: "Проекты",
       experience: "Опыт",
       contact: "Контакт",
       settings: "Settings",
     },
     settings: {
-      enabled: "Включено",
+      track: "track",
       noTracks: "— Нет треков —",
     },
     status: {
@@ -196,16 +186,14 @@ export const translations: Record<Lang, Translation> = {
     me: {
       downloadCv: "Download CV",
       labels: {
-        role: "Processor Type",
-        cv: "Resume File",
+        name: "Имя",
+        role: "Должность",
+        cv: "CV",
+        frontend: "Frontend Stack",
+        mobile: "Mobile Stack",
       },
     },
-    stack: {
-      frontend: "Frontend Stack",
-      mobile: "Mobile Stack",
-    },
     projects: {
-      visit: "Run Test",
       url: "Target URL",
     },
     experience: {

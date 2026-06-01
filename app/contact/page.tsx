@@ -1,8 +1,8 @@
 "use client";
 
-import SpecRow from "@/components/SpecRow";
-import { useT } from "@/components/LangProvider";
+import ContactLine from "@/components/ContactLine";
 import { getPortfolio } from "@/lib/portfolio";
+import { useT } from "@/components/LangProvider";
 
 export default function ContactPage() {
   const { lang } = useT();
@@ -10,9 +10,9 @@ export default function ContactPage() {
 
   return (
     <main className="page page-enter">
-      <div className="spec-col">
+      <div className="contact-list">
         {portfolio.contactLinks.map((link) => (
-          <SpecRow
+          <ContactLine
             key={link.label}
             label={link.label}
             value={link.value}

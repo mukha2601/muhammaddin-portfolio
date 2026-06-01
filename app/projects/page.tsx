@@ -19,14 +19,6 @@ export default function ProjectsPage() {
             </div>
             <SpecRow label={t.projects.url} value={project.url} href={project.url} />
             <p className="term-entry-desc">{project.description}</p>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="term-action"
-            >
-              {t.projects.visit} →
-            </a>
           </article>
         ))}
       </div>

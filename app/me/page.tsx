@@ -8,31 +8,29 @@ import { getPortfolio } from "@/lib/portfolio";
 export default function MePage() {
   const { t, lang } = useT();
   const portfolio = getPortfolio(lang);
+  const frontend = portfolio.skills.frontend.map((s) => s.name).join(", ");
+  const mobile = portfolio.skills.mobile.map((s) => s.name).join(", ");
 
   return (
-    <main className="page page-enter">
-      <div className="spec-layout">
-        <div className="spec-photo" aria-label="Profile photo">
+    <main className="page page-me page-enter">
+      <div className="me-layout">
+        <div className="me-photo" aria-label="Profile photo">
           <Image
             src={portfolio.profile.photoUrl}
             alt="Profile photo"
-            width={200}
-            height={240}
+            width={340}
+            height={400}
             priority
-            className="spec-photo-img"
+            className="me-photo-img"
           />
         </div>
 
-        <div className="spec-grid">
-          <div className="spec-col">
-            <SpecRow label={t.me.labels.role} value={portfolio.profile.role} />
-            <SpecRow
-              label={t.me.labels.cv}
-              value={t.me.downloadCv}
-              href={portfolio.profile.cvUrl}
-              download
-            />
-          </div>
+        <div className="me-info">
+          <SpecRow label={t.me.labels.name} value={portfolio.profile.name} />
+          <div className="me-rule" role="separator" aria-hidden="true" />
+          <SpecRow label={t.me.labels.frontend} value={frontend} />
+          <div className="me-rule" role="separator" aria-hidden="true" />
+          <SpecRow label={t.me.labels.mobile} value={mobile} />
         </div>
       </div>
     </main>
